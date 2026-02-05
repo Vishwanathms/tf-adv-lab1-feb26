@@ -95,7 +95,7 @@ pipeline {
       }
       steps {
         sh """
-          terraform workspace select ${env.TARGET_ENV} || terraform workspace new ${env.TARGET_ENV}
+          terraform workspace select "$TARGET_ENV" || terraform workspace new "$TARGET_ENV"
           echo "Using workspace: \\$(terraform workspace show)"
         """
       }
